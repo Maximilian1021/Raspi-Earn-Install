@@ -19,7 +19,7 @@ Docker
 curl -sSL https://get.docker.com/ | sh
 sudo usermod -aG docker $USER
 newgrp docker
-docker version	      #Test
+docker version	       #Test
 
 Portainer (alt)
 sudo docker pull portainer/portainer:linux-arm
@@ -56,7 +56,7 @@ wget -qO- https://brightdata.com/static/earnapp/install.sh > /tmp/earnapp.sh && 
 Peer2Profit (In Portainer mamuell einfügen)
 Image: 		        peer2profit/peer2profit_linux:latest				 
 Command:	        '/bin/sh' '-c' 'p2pclient -l deine@mailadresse.com'
-Restart Policies:    Unless Stopped
+Restart Policies:      Unless Stopped
 ---
 
 ---
