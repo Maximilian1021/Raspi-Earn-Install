@@ -1,11 +1,11 @@
-sudo rpi-update		=	Software update	(nicht zuempfehlen)
-sudo apt update		=	Update
-sudo apt upgrade	=	Upgrade		
+sudo rpi-update		#Software update	(nicht zuempfehlen)
+sudo apt update		#Update
+sudo apt upgrade	#Upgrade		
 sudo apt autoremove	
 
-myst-update.sh		=	für zum Updaten
+myst-update.sh		#zum Updaten
 
-ip addr			=	Ip Adresse Pi
+ip addr			    #Ip Adresse Pi
 
 ---
 Teamviewer
