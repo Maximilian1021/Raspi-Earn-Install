@@ -143,7 +143,6 @@ sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
 
 @lxpanel --profile LXDE-pi
 @pcmanfm --desktop --profile LXDE-pi
-#@xscreensaver -no-splash
 
 #Bildschirmschoner deaktivieren
 @xscreensaver -no-splash
