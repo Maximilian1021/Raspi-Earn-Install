@@ -1,0 +1,158 @@
+sudo rpi-update		=	Software update	(nicht zuempfehlen)
+sudo apt update		=	Update
+sudo apt upgrade	=	Upgrade		
+sudo apt autoremove	
+
+myst-update.sh		=	für zum Updaten
+
+ip addr			=	Ip Adresse Pi
+
+---
+Teamviewer
+wget https://download.teamviewer.com/download/linux/teamviewer-host_armhf.deb
+sudo dpkg -i teamviewer-host_armhf.deb
+sudo apt --fix-broken install
+---
+
+---
+Docker
+curl -sSL https://get.docker.com/ | sh
+sudo usermod -aG docker $USER
+newgrp docker
+docker version				(Test)
+
+Portainer (alt)
+sudo docker pull portainer/portainer:linux-arm
+sudo docker run --restart always -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer:linux-arm
+Portainer (neu)
+sudo docker pull portainer/portainer-ce:latest
+sudo docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+---
+
+---
+Honeygain
+sudo apt-get install git
+git clone https://github.com/GreenFrogSB/LMDS.git ~/LMDS
+cd ~/LMDS
+./deploy.sh
+
+ganz nach unten wieder auf honey datein eingeben und dann 
+docker-compose up -d
+cd
+---
+
+---
+Earnapp 
+wget -qO- https://brightdata.com/static/earnapp/install.sh > /tmp/earnapp.sh && sudo bash /tmp/earnapp.sh
+---
+
+---
+Peer2Profit
+Image: 		peer2profit/peer2profit_linux:latest				 
+Command:	'/bin/sh' '-c' 'p2pclient -l deine@mailadresse.com'
+---
+
+---
+traffmonetizer
+docker pull traffmonetizer/cli:latest
+docker run -i --name traff traffmonetizer/cli start accept --ErHs+t+xf+lRQcRZm7dR6SelzGYBKBZiejVncTswzRw=
+---
+
+---
+MYST
+docker pull mysteriumnetwork/myst
+docker run --cap-add NET_ADMIN -d -p 4449:4449 --name myst -v myst-data:/var/lib/mysterium-node --restart unless-stopped mysteriumnetwork/myst:latest service --agreed-terms-and-conditions
+
+https://mystnodes.com/
+API Key eingeben (Claim this node in mystnodes.com)
+
+sudo nano /usr/bin/myst-update.sh
+__________________________________________________________________________________________
+#!/usr/bin/env bash
+set -e
+BASE_IMAGE="myst:latest"
+REGISTRY="mysteriumnetwork"
+IMAGE="$REGISTRY/$BASE_IMAGE"
+HOSTMYSTDIR="myst-data" #this can be changed to your liking - make sure the path exists and matches your current settings.
+OPTIONS="-p 4449:4449" #this can be changed to your needs. For example -p 4449:4449 .....
+CID=$(docker ps | grep $IMAGE | awk '{print $1}')
+docker pull $IMAGE
+
+for im in $CID
+do
+    LATEST=`docker inspect --format "{{.Id}}" $IMAGE`
+    RUNNING=`docker inspect --format "{{.Image}}" $im`
+    NAME=`docker inspect --format '{{.Name}}' $im | sed "s/\///g"`
+    echo "Latest:" $LATEST
+    echo "Running:" $RUNNING
+    if [ "$RUNNING" != "$LATEST" ];then
+        echo "upgrading $NAME"
+        docker stop $NAME
+        docker rm -f $NAME
+        docker run -d --restart unless-stopped --cap-add NET_ADMIN $OPTIONS --name $NAME -v $HOSTMYSTDIR:/var/lib/mysterium-node mysteriumnetwork/myst:latest service --agreed-terms-and-conditions
+    else
+        echo "$NAME up to date"
+    fi
+done
+_____________________________________________________________________________________________
+
+
+sudo chmod +x /usr/bin/myst-update.sh
+sudo crontab -e
+0 3 * * * /usr/bin/myst-update.sh
+
+myst-update.sh						(UPDATE)
+
+MYST Contract  (PolygonNetzwerk)  0x1379E8886A944d2D9d440b3d88DF536Aea08d9F3  (für Wallet)
+---
+
+---
+IPRoyals
+docker pull iproyal/pawns-cli:latest
+docker run --restart=on-failure:5 iproyal/pawns-cli:latest -email=yourmailhere -password=yourpassworthere -device-name=raspberrypi -device-id=raspberrypi1 -accept-tos
+---
+
+---
+Bitping					reflink: https://app.bitping.com?r=594HWc9e
+docker pull bitping/bitping-node
+mkdir $HOME/.bitping/ 
+docker run -it --mount type=bind,source="$HOME/.bitping/",target=/root/.bitping bitping/bitping-node:latest
+---
+
+---
+Ebesucher
+sudo modprobe bcm2835_wdt
+sudo apt-get install watchdog
+sudo nano /etc/watchdog.conf
+        - watchdog-device = /dev/watchdog
+        - max-load-1 = 24
+sudo /etc/init.d/watchdog start
+sudo apt install firefox-esr=91.13.0esr-1~deb11u1
+sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+_______________________________________________________________
+@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+#@xscreensaver -no-splash
+
+#sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+
+#Bildschirmschoner deaktivieren
+@xscreensaver -no-splash
+@xset s off
+@xset -dpms
+@xset s noblank
+
+#Lädt Chromium bei einem Neustart
+#@chromium-browser https://www.ebesucher.de/surfbar/name-einfügen
+@firefox-esr https://www.ebesucher.de/surfbar/name-einfügen			
+________________________________________________________________
+
+Addon für eBesucher und Time Restarter (Methode4_30Min)
+
+Einstellungen: Cookies und Website-Daten beim Beenden von Firefox löschen  (aktivieren)
+
+----------------------------------------------------------------------------
+
+
+
+
