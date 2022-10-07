@@ -136,13 +136,11 @@ sudo nano /etc/watchdog.conf
         - max-load-1 = 24
 sudo /etc/init.d/watchdog start
 sudo apt install firefox-esr=91.13.0esr-1~deb11u1           #Installation Firefox version 91.13.0
-
-_______________________________________________________________
 sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
-# Füge folgendes in die File ein!
-
+_______________________________________________________________
 @lxpanel --profile LXDE-pi
 @pcmanfm --desktop --profile LXDE-pi
+#@xscreensaver -no-splash
 
 #Bildschirmschoner deaktivieren
 @xscreensaver -no-splash
