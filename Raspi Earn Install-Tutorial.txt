@@ -56,7 +56,7 @@ wget -qO- https://brightdata.com/static/earnapp/install.sh > /tmp/earnapp.sh && 
 Peer2Profit (In Portainer mamuell einfügen)
 Image: 		        peer2profit/peer2profit_linux:latest				 
 Command:	        '/bin/sh' '-c' 'p2pclient -l deine@mailadresse.com'
-Restart Policies:        Unless Stopped
+Restart Policies:       Unless Stopped
 ---
 
 ---
@@ -108,7 +108,7 @@ sudo chmod +x /usr/bin/myst-update.sh
 sudo crontab -e
 0 3 * * * /usr/bin/myst-update.sh
 
-myst-update.sh						(UPDATE)
+myst-update.sh				#ZUM MANUELLEN UPDATEN
 
 MYST Contract  (PolygonNetzwerk)  0x1379E8886A944d2D9d440b3d88DF536Aea08d9F3  (für Wallet)
 ---
