@@ -40,7 +40,7 @@ cd ~/LMDS
 cd ~/LMDS
 ./deploy.sh
 #Earn $ with LMDS
-#HoneyGain - Dpcker container
+#HoneyGain - Docker container
 #Bei eingeben der Daten drauf achten das man vorher alles Löscht 
 docker-compose up -d
 cd
@@ -49,7 +49,7 @@ cd
 ---
 Earnapp 
 wget -qO- https://brightdata.com/static/earnapp/install.sh > /tmp/earnapp.sh && sudo bash /tmp/earnapp.sh
-#Orangenen Link Kopieren und in Browser einfügen um die Node zu koppeln
+#Orangenen Link kopieren und in Browser einfügen um die Node zu koppeln
 ---
 
 ---
