@@ -142,15 +142,13 @@ _______________________________________________________________
 @pcmanfm --desktop --profile LXDE-pi
 #@xscreensaver -no-splash
 
-#sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
-
 #Bildschirmschoner deaktivieren
 @xscreensaver -no-splash
 @xset s off
 @xset -dpms
 @xset s noblank
 
-#Lädt Chromium bei einem Neustart
+#Lädt Browser bei einem Neustart
 #@chromium-browser https://www.ebesucher.de/surfbar/name-einfügen
 @firefox-esr https://www.ebesucher.de/surfbar/name-einfügen			
 ________________________________________________________________
