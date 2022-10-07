@@ -5,7 +5,7 @@ sudo apt autoremove
 
 myst-update.sh		#zum Updaten
 
-ip addr	            #Ip Adresse Pi
+ip addr	                #Ip Adresse Pi
 
 ---
 Teamviewer
