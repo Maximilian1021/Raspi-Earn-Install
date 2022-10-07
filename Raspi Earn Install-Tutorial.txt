@@ -114,13 +114,13 @@ MYST Contract  (PolygonNetzwerk)  0x1379E8886A944d2D9d440b3d88DF536Aea08d9F3  (f
 ---
 
 ---
-IPRoyals
+IPRoyals                                  Reflink:	https://pawns.app?r=888797
 docker pull iproyal/pawns-cli:latest
 docker run --restart=on-failure:5 iproyal/pawns-cli:latest -email=yourmailhere -password=yourpassworthere -device-name=raspberrypi -device-id=raspberrypi1 -accept-tos
 ---
 
 ---
-Bitping					reflink: https://app.bitping.com?r=594HWc9e
+Bitping					                   Reflink: https://app.bitping.com?r=594HWc9e                      (Testphase)
 docker pull bitping/bitping-node
 mkdir $HOME/.bitping/ 
 docker run -it --mount type=bind,source="$HOME/.bitping/",target=/root/.bitping bitping/bitping-node:latest
@@ -130,11 +130,12 @@ docker run -it --mount type=bind,source="$HOME/.bitping/",target=/root/.bitping 
 Ebesucher
 sudo modprobe bcm2835_wdt
 sudo apt-get install watchdog
-sudo nano /etc/watchdog.conf
+sudo nano /etc/watchdog.conf        
+#folgendes auskommentieren
         - watchdog-device = /dev/watchdog
         - max-load-1 = 24
 sudo /etc/init.d/watchdog start
-sudo apt install firefox-esr=91.13.0esr-1~deb11u1
+sudo apt install firefox-esr=91.13.0esr-1~deb11u1           #Installation Firefox version 91.13.0
 sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
 _______________________________________________________________
 @lxpanel --profile LXDE-pi
@@ -154,9 +155,9 @@ _______________________________________________________________
 @firefox-esr https://www.ebesucher.de/surfbar/name-einfügen			
 ________________________________________________________________
 
-Addon für eBesucher und Time Restarter (Methode4_30Min)
+Addon für eBesucher und Time Restarter (Methode4_30Min+Surfbarlink)
 
-Einstellungen: Cookies und Website-Daten beim Beenden von Firefox löschen  (aktivieren)
+Einstellungen Firefox: Cookies und Website-Daten beim Beenden von Firefox löschen  (aktivieren)
 
 ----------------------------------------------------------------------------
 
