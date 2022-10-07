@@ -5,7 +5,7 @@ sudo apt autoremove
 
 myst-update.sh		#zum Updaten
 
-ip addr			    #Ip Adresse Pi
+ip addr	            #Ip Adresse Pi
 
 ---
 Teamviewer
@@ -19,7 +19,7 @@ Docker
 curl -sSL https://get.docker.com/ | sh
 sudo usermod -aG docker $USER
 newgrp docker
-docker version				(Test)
+docker version	      #Test
 
 Portainer (alt)
 sudo docker pull portainer/portainer:linux-arm
@@ -35,8 +35,13 @@ sudo apt-get install git
 git clone https://github.com/GreenFrogSB/LMDS.git ~/LMDS
 cd ~/LMDS
 ./deploy.sh
-
-ganz nach unten wieder auf honey datein eingeben und dann 
+#install Docker&Docker-compose
+#Restart Pi
+cd ~/LMDS
+./deploy.sh
+#Earn $ with LMDS
+#HoneyGain - Dpcker container
+#Bei eingeben der Daten drauf achten das man vorher alles Löscht 
 docker-compose up -d
 cd
 ---
@@ -44,12 +49,14 @@ cd
 ---
 Earnapp 
 wget -qO- https://brightdata.com/static/earnapp/install.sh > /tmp/earnapp.sh && sudo bash /tmp/earnapp.sh
+#Orangenen Link Kopieren und in Browser einfügen um die Node zu koppeln
 ---
 
 ---
-Peer2Profit
-Image: 		peer2profit/peer2profit_linux:latest				 
-Command:	'/bin/sh' '-c' 'p2pclient -l deine@mailadresse.com'
+Peer2Profit (In Portainer mamuell einfügen)
+Image: 		        peer2profit/peer2profit_linux:latest				 
+Command:	        '/bin/sh' '-c' 'p2pclient -l deine@mailadresse.com'
+Restart Policies:   Unless Stopped
 ---
 
 ---
