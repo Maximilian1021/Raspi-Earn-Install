@@ -1,6 +1,5 @@
 sudo rpi-update		#Software update	(nicht zuempfehlen)
-sudo apt update		#Update
-sudo apt upgrade	#Upgrade		
+sudo apt update && sudo apt upgrade	
 sudo apt autoremove	
 
 myst-update.sh		#zum Updaten
