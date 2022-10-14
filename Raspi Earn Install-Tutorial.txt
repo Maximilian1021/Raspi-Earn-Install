@@ -136,6 +136,7 @@ sudo nano /etc/watchdog.conf
         - max-load-1 = 24
 sudo /etc/init.d/watchdog start
 sudo apt install firefox-esr=91.13.0esr-1~deb11u1           #Installation Firefox version 91.13.0
+sudo apt-mark hold firefox-esr                              #sudo apt-mark unhold firefox-esr
 
 _______________________________________________________________
 sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
