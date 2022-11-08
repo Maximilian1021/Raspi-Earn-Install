@@ -125,7 +125,7 @@ touch rp.env
 nano rp.env
 __________________________________________________________________________________________
 RP_EMAIL=your@email.com
-RP_PASSWORD=yourpasswor
+RP_PASSWORD=yourpassword
 __________________________________________________________________________________________
 docker run --env-file rp.env -d --restart=always repocket/repocket
 ---
