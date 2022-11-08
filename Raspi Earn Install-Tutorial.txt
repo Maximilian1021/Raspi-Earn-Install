@@ -119,10 +119,15 @@ docker run --restart=on-failure:5 iproyal/pawns-cli:latest -email=yourmailhere -
 ---
 
 ---
-Bitping					                   Reflink: https://app.bitping.com?r=594HWc9e                      (Testphase)
-docker pull bitping/bitping-node
-mkdir $HOME/.bitping/ 
-docker run -it --mount type=bind,source="$HOME/.bitping/",target=/root/.bitping bitping/bitping-node:latest
+Repocket
+docker pull repocket/repocket:latest
+touch rp.env
+nano rp.env
+__________________________________________________________________________________________
+RP_EMAIL=your@email.com
+RP_PASSWORD=yourpasswor
+__________________________________________________________________________________________
+docker run --env-file rp.env -d --restart=always repocket/repocket
 ---
 
 ---
