@@ -61,7 +61,7 @@ Restart Policies:       Unless Stopped
 ---
 traffmonetizer
 docker pull traffmonetizer/cli:latest
-docker run -i --name traff traffmonetizer/cli start accept --tokenadress
+docker run -i --name traff traffmonetizer/cli start accept --token your_token_here
 
 ---
 
