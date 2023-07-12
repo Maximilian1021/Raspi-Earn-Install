@@ -120,7 +120,7 @@ docker run --restart=on-failure:5 iproyal/pawns-cli:latest -email=yourmailhere -
 ---
 
 ---
-Repocket
+Repocket                                                                                                                  12.07.2023
 docker pull repocket/repocket:latest
 docker run --name repocket -e RP_EMAIL=your@email.com -e RP_API_KEY=your_api_key -d --restart=always repocket/repocket
 ---
